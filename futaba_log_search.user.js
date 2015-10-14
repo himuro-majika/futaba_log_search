@@ -13,7 +13,7 @@
 this.$ = this.jQuery = jQuery.noConflict(true);
 
 (function ($) {
-	var waitnum = 3;	//404時のページ遷移ウェイト[秒]
+	var waitnum = 30;	//404時のページ遷移ウェイト[秒]
 
 	var title = document.title;								//ページタイトル
 
@@ -41,6 +41,10 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 				site: "iFutaba",
 				url: "http://ifutaba.net/" + $S + "/" + $F,
 			},
+			{
+				site: "FTBucket",
+				url: "http://dev.ftbucket.info/scrapshot/" + $S + "/cont/" + $S + ".2chan.net_b_res_" + $D + "/index.htm",
+			},
 		],
 		dat: [
 			{
@@ -61,6 +65,10 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 				site: "iFutaba",
 				url: "http://ifutaba.net/" + $S + "/" + $F,
 			},
+			{
+				site: "FTBucket",
+				url: "http://dev.ftbucket.info/scrapshot/" + $S + "/cont/" + $S + ".2chan.net_b_res_" + $D + "/index.htm",
+			},
 		],
 		jun: [
 			{
@@ -70,6 +78,10 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 			{
 				site: "iFutaba",
 				url: "http://ifutaba.net/" + $S + "/" + $F,
+			},
+			{
+				site: "FTBucket",
+				url: "http://dev.ftbucket.info/scrapshot/" + $S + "/cont/" + $S + ".2chan.net_b_res_" + $D + "/index.htm",
 			},
 		]
 	};
@@ -86,14 +98,48 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 		logService_server.forEach(function(item) {
 			$li.append("<li><a href='" + item.url + "' target='_blank' rel=noreferrer>" + item.site + "*</a></li>");
 		});
-		satty($S, $D);
+		satty();
+		// msmht();
 		setTimeout(redirect, waitnum * 1000);
 		setInterval(countdown, 1000);
 	}
 	//通常時
 	else {
-		$("body > table").before("<a href='" + logService_server[0].url + "' target='_blank' rel=noreferrer>外部ログサイト*</a>");
+		//$("body > table").before("<a href='" + logService_server[0].url + "' target='_blank' rel=noreferrer>外部ログサイト*</a>");
+		makelogsitebutton();
 	}
+
+	function makelogsitebutton() {
+		var $logsitelink = $("<a>", {
+			id: "futaba_log_search_loglist_button",
+			text: "[外部ログサイト]",
+			css: {
+				cursor: "pointer",
+			},
+			click: function() {
+				showlogsitelist();
+			}
+		});
+		$("body > table").before($logsitelink);
+
+		// $logsitelink.toggle(
+		// 	function () {
+		// 		showlogsitelist();
+		// 	},
+		// 	function () {
+		// 		$("#loglist").remove();
+		// 	}
+		// );
+
+		function showlogsitelist() {
+			$("#futaba_log_search_loglist_button").append($("<ul id='loglist'>"));
+			var $li = $("#loglist");
+			logService_server.forEach(function(item) {
+				$li.append("<li><a href='" + item.url + "' target='_blank' rel=noreferrer>" + item.site + "*</a></li>");
+			});
+		}
+	}
+
 
 	/*
 	 * ログ保管先にジャンプ
@@ -112,20 +158,20 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 	/*
 	 * サッチーのログを検索
 	 */
-	function satty(saba, name){
+	function satty(){
 		var url_prefix = "http://tsumanne.net";
 		var url_ss;
 		var url_cgi = "indexes.php?format=json&sbmt=URL&w=";
-		if (saba == "img") {
+		if ($S == "img") {
 			url_ss = "/si/";
 		}
-		else if (saba == "dat") {
+		else if ($S == "dat") {
 			url_ss = "/sa/";
 		}
 		else {
 			return;
 		}
-		var url_req = url_prefix + url_ss + url_cgi + name;
+		var url_req = url_prefix + url_ss + url_cgi + $D;
 		GM_xmlhttpRequest({
 			method: "GET",
 			url: url_req,
@@ -136,5 +182,39 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 				}
 			}
 		});
+	}
+	function msmht() {
+		var url_prefix = "http://kokoromati.orz.hm/mm/view";
+		var url_ss;
+		var url_cgi = "catalog";
+		if ($S == "may") {
+			url_ss = "/11/";
+		}
+		else if ($S == "img") {
+			url_ss = "/14/";
+		}
+		else if ($S == "dat") {
+			url_ss = "/15/";
+		}
+		else {
+			return;
+		}
+		var url_req = url_prefix + url_ss + url_cgi	;
+		GM_xmlhttpRequest({
+			method: "POST",
+			url: url_req,
+			data: "filter=%24mht_name%3D%3D%22" + $S + ".b." + $D + ".mht%22",
+			headers: {
+				"Content-Type": "application/x-www-form-urlencoded"
+			},
+			onload: function(response) {
+				var exp = new RegExp(/<td class="td03"><a href="\/mm\/view(\/mht\/\d+)" target="_blank">/);
+				var path = response.responseText.match(exp);
+				if( path ){
+					$li.append("<li><a href='" + url_prefix + path[1] + "' target='_blank'>Ms.MHT*</a></li>");
+				}
+			}
+		});
+
 	}
 })(jQuery);
