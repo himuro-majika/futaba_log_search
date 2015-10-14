@@ -88,8 +88,12 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 	//鯖毎の振り分け
 	var logService_server = logService[$S];
 
+	//通常時
+	if (title !== "404 File Not Found") {
+		makelogsitebutton();
+	}
 	//404時
-	if (title == "404 File Not Found") {
+	else {
 		var $h1 = $("body > h1");
 		$h1.before("<div><span id='countdown'>" + waitnum + "</span>秒後に外部ログサイト(" + logService_server[0].site + ")に移動します</div>");
 		$h1.before("<div>ログサイトリスト :</div>");
@@ -103,13 +107,9 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 		setTimeout(redirect, waitnum * 1000);
 		setInterval(countdown, 1000);
 	}
-	//通常時
-	else {
-		//$("body > table").before("<a href='" + logService_server[0].url + "' target='_blank' rel=noreferrer>外部ログサイト*</a>");
-		makelogsitebutton();
-	}
 
 	function makelogsitebutton() {
+		var toggle_flag = true;
 		var $logsitelink = $("<a>", {
 			id: "futaba_log_search_loglist_button",
 			text: "[外部ログサイト]",
@@ -122,21 +122,19 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 		});
 		$("body > table").before($logsitelink);
 
-		// $logsitelink.toggle(
-		// 	function () {
-		// 		showlogsitelist();
-		// 	},
-		// 	function () {
-		// 		$("#loglist").remove();
-		// 	}
-		// );
-
 		function showlogsitelist() {
-			$("#futaba_log_search_loglist_button").append($("<ul id='loglist'>"));
-			var $li = $("#loglist");
-			logService_server.forEach(function(item) {
-				$li.append("<li><a href='" + item.url + "' target='_blank' rel=noreferrer>" + item.site + "*</a></li>");
-			});
+			if(toggle_flag) {
+				$("#futaba_log_search_loglist_button").after($("<ul id='loglist'>"));
+				var $li = $("#loglist");
+				logService_server.forEach(function(item) {
+					$li.append("<li><a href='" + item.url + "' target='_blank' rel=noreferrer>" + item.site + "*</a></li>");
+				});
+				toggle_flag = false;
+			}
+			else {
+				$("#loglist").remove();
+				toggle_flag = true;
+			}
 		}
 	}
 
