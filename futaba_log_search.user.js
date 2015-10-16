@@ -13,7 +13,7 @@
 this.$ = this.jQuery = jQuery.noConflict(true);
 
 (function ($) {
-	var waitnum = 30;	//404時のページ遷移ウェイト[秒]
+	var waitnum = 10;	//404時のページ遷移ウェイト[秒]
 
 	var title = document.title;								//ページタイトル
 
