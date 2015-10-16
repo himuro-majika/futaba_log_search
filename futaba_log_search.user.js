@@ -103,7 +103,7 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 			$li.append("<li><a href='" + item.url + "' target='_blank' rel=noreferrer>" + item.site + "*</a></li>");
 		});
 		satty();
-		// msmht();
+		msmht();
 		setTimeout(redirect, waitnum * 1000);
 		setInterval(countdown, 1000);
 	}
