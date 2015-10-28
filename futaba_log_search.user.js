@@ -43,7 +43,7 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 			},
 			{
 				site: "FTBucket",
-				url: "http://dev.ftbucket.info/scrapshot/" + $S + "/cont/" + $S + ".2chan.net_b_res_" + $D + "/index.htm",
+				url: "http://www.ftbucket.info/" + $S + "/cont/" + $S + ".2chan.net_b_res_" + $D + "/index.htm",
 			},
 		],
 		dat: [
@@ -67,7 +67,7 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 			},
 			{
 				site: "FTBucket",
-				url: "http://dev.ftbucket.info/scrapshot/" + $S + "/cont/" + $S + ".2chan.net_b_res_" + $D + "/index.htm",
+				url: "http://www.ftbucket.info/" + $S + "/cont/" + $S + ".2chan.net_b_res_" + $D + "/index.htm",
 			},
 		],
 		jun: [
@@ -81,7 +81,7 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 			},
 			{
 				site: "FTBucket",
-				url: "http://dev.ftbucket.info/scrapshot/" + $S + "/cont/" + $S + ".2chan.net_b_res_" + $D + "/index.htm",
+				url: "http://www.ftbucket.info/" + $S + "/cont/" + $S + ".2chan.net_b_res_" + $D + "/index.htm",
 			},
 		]
 	};
