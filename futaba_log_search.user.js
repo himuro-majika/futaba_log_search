@@ -167,6 +167,9 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 		else if ($S == "dat") {
 			url_ss = "/sa/";
 		}
+		else if ($S == "may") {
+			url_ss = "/my/";
+		}
 		else {
 			return;
 		}
@@ -214,6 +217,5 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 				}
 			}
 		});
-
 	}
 })(jQuery);
