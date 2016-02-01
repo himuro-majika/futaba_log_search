@@ -3,10 +3,9 @@
 
 ふたば☆ちゃんねる 二次元裏img,dat,may,junの消滅したスレを開いた時に過去ログを表示します
 
-Firefox + [Greasemonkey](https://addons.mozilla.org/ja/firefox/addon/greasemonkey/),  
-Chrome + [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo),  
-Opera(ver.15+) + [Tampermonkey](https://addons.opera.com/extensions/details/tampermonkey-beta/)  
-で動作確認済みです
+Firefoxの場合、[Greasemonkey](https://addons.mozilla.org/ja/firefox/addon/greasemonkey/)を先にインスールしてからスクリプトをインストールして下さい  
+Chromeの場合、[Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)を先にインスールしてからスクリプトをインストールして下さい  
+Opera(ver.15+)の場合、[Tampermonkey](https://addons.opera.com/extensions/details/tampermonkey-beta/)を先にインスールしてからスクリプトをインストールして下さい  
 
 ## 機能
 * スレ消滅(404)時に外部のログサイトへ移動します
