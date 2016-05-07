@@ -9,7 +9,7 @@
 // @include        http://jun.2chan.net/b/res/*.htm
 // @require        http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js
 // @require        https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/md5.js
-// @version        1.2.1
+// @version        1.3.0
 // @grant          GM_xmlhttpRequest
 // @license        MIT
 // @icon         data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAPUExURYv4i2PQYy2aLUe0R////zorx9oAAAAFdFJOU/////8A+7YOUwAAAElJREFUeNqUj1EOwDAIQoHn/c88bX+2fq0kRsAoUXVAfwzCttWsDWzw0kNVWd2tZ5K9gqmMZB8libt4pSg6YlO3RnTzyxePAAMAzqMDgTX8hYYAAAAASUVORK5CYII=
@@ -64,6 +64,10 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 				site: "futabalog",
 				url: "http://futabalog.com/thread/" + $hash,
 			},
+			{
+				site: "ふたば☆ちん",
+				url: "http://" + $S + ".2chin.net/" + $D + "/res/" + $F,
+			},
 		],
 		dat: [
 			{
@@ -92,6 +96,10 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 			{
 				site: "futabalog",
 				url: "http://futabalog.com/thread/" + $hash,
+			},
+			{
+				site: "ふたば☆ちん",
+				url: "http://" + $S + ".2chin.net/" + $D + "/res/" + $F,
 			},
 		],
 		jun: [
