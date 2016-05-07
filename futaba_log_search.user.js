@@ -64,6 +64,10 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 				site: "futabalog",
 				url: "http://futabalog.com/thread/" + $hash,
 			},
+			{
+				site: "ふたば☆ちん",
+				url: "http://" + $S + ".2chin.net/" + $D + "/res/" + $F,
+			},
 		],
 		dat: [
 			{
@@ -92,6 +96,10 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 			{
 				site: "futabalog",
 				url: "http://futabalog.com/thread/" + $hash,
+			},
+			{
+				site: "ふたば☆ちん",
+				url: "http://" + $S + ".2chin.net/" + $D + "/res/" + $F,
 			},
 		],
 		jun: [
