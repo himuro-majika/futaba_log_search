@@ -4,12 +4,16 @@
 // @description    img,dat,may,junのスレが消えた時に過去ログを表示しちゃう
 // @author         himuro_majika
 // @include        http://img.2chan.net/b/res/*.htm
+// @include        https://img.2chan.net/b/res/*.htm
 // @include        http://dat.2chan.net/b/res/*.htm
+// @include        https://dat.2chan.net/b/res/*.htm
 // @include        http://may.2chan.net/b/res/*.htm
+// @include        https://may.2chan.net/b/res/*.htm
 // @include        http://jun.2chan.net/b/res/*.htm
+// @include        https://jun.2chan.net/b/res/*.htm
 // @require        http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js
 // @require        https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/md5.js
-// @version        1.3.0
+// @version        1.3.1
 // @grant          GM_xmlhttpRequest
 // @license        MIT
 // @icon         data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAPUExURYv4i2PQYy2aLUe0R////zorx9oAAAAFdFJOU/////8A+7YOUwAAAElJREFUeNqUj1EOwDAIQoHn/c88bX+2fq0kRsAoUXVAfwzCttWsDWzw0kNVWd2tZ5K9gqmMZB8libt4pSg6YlO3RnTzyxePAAMAzqMDgTX8hYYAAAAASUVORK5CYII=
@@ -34,7 +38,7 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 	var $F = location.pathname.match(/\d+\.htm/);
 	// ファイル名の数字(11111111)
 	var $N = $F[0].match(/\d+/);
-	var $hash = CryptoJS.MD5($U);
+	var $hash = CryptoJS.MD5($U.replace("https", "http"));
 
 	//ログ保管サービスジャンプ先URL
 	var logService = {
