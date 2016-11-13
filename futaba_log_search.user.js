@@ -38,7 +38,7 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 	var $F = location.pathname.match(/\d+\.htm/);
 	// ファイル名の数字(11111111)
 	var $N = $F[0].match(/\d+/);
-	var $hash = CryptoJS.MD5($U);
+	var $hash = CryptoJS.MD5($U.replace("https", "http"));
 
 	//ログ保管サービスジャンプ先URL
 	var logService = {
