@@ -21,7 +21,7 @@
 this.$ = this.jQuery = jQuery.noConflict(true);
 
 (function ($) {
-	var waitnum = 10;	//404時のページ遷移ウェイト[秒]
+	var waitnum = -1;	//404時のページ遷移ウェイト[秒]:-1で無効
 
 	var title = document.title;								//ページタイトル
 
@@ -142,9 +142,13 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 	//404時
 	else {
 		var $h1 = $("body > h1");
-		$h1.before("<div><span id='countdown'>" + waitnum +
+		if (waitnum !== -1) {
+			$h1.before("<div><span id='countdown'>" + waitnum +
 			"</span>秒後に外部ログサイト(" + logService_server[0].site +
 			")に移動します</div>");
+			setTimeout(redirect, waitnum * 1000);
+			setInterval(countdown, 1000);
+		}
 		$h1.before("<div>ログサイトリスト :</div>");
 		$h1.before("<ul id='loglist'></ul>");
 		var $li = $("#loglist");
@@ -154,8 +158,6 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 		});
 		satty();
 		msmht();
-		setTimeout(redirect, waitnum * 1000);
-		setInterval(countdown, 1000);
 	}
 
 	function makelogsitebutton() {
