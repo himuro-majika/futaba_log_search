@@ -48,10 +48,6 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 				url: "http://parupunte.net/logbox/detail.html?no=" + $N,
 			},
 			{
-				site: "ふたろぐばこ",
-				url: "http://imgbako.com/" + $F,
-			},
-			{
 				site: "ぽかん庫",
 				url: "http://u.magipoka.net/res/" + $F,
 			},
@@ -72,6 +68,10 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 				site: "ふたば☆ちん",
 				url: "http://" + $S + ".2chin.net/" + $D + "/res/" + $F,
 			},
+			{
+				site: "futabachan.net",
+				url: "https://www.futabachan.net/" + $S + "/" + $N,
+			},
 		],
 		dat: [
 			{
@@ -82,11 +82,15 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 				site: "iFutaba",
 				url: "http://ifutaba.net/" + $S + "/" + $F,
 			},
+			{
+				site: "futabachan.net",
+				url: "https://www.futabachan.net/" + $S + "/" + $N,
+			},
 		],
 		may: [
 			{
-				site: "ふたろぐばこ",
-				url: "http://futalog.com/" + $F,
+				site: "futabalog",
+				url: "http://futabalog.com/thread/" + $hash,
 			},
 			{
 				site: "iFutaba",
@@ -97,13 +101,14 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 				url: "http://www.ftbucket.info/" + $S + "/cont/" + $S +
 					".2chan.net_" + $D + "_res_" + $N + "/index.htm",
 			},
-			{
-				site: "futabalog",
-				url: "http://futabalog.com/thread/" + $hash,
-			},
+
 			{
 				site: "ふたば☆ちん",
 				url: "http://" + $S + ".2chin.net/" + $D + "/res/" + $F,
+			},
+			{
+				site: "futabachan.net",
+				url: "https://www.futabachan.net/" + $S + "/" + $N,
 			},
 		],
 		jun: [
@@ -120,6 +125,10 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 				site: "FTBucket",
 				url: "http://www.ftbucket.info/" + $S + "/cont/" + $S +
 					".2chan.net_" + $D + "_res_" + $N + "/index.htm",
+			},
+			{
+				site: "futabachan.net",
+				url: "https://www.futabachan.net/" + $S + "/" + $N,
 			},
 		]
 	};
