@@ -13,7 +13,7 @@
 // @include        https://jun.2chan.net/b/res/*.htm
 // @require        http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js
 // @require        https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/md5.js
-// @version        1.3.1
+// @version        1.3.3
 // @grant          GM_xmlhttpRequest
 // @license        MIT
 // @icon         data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAPUExURYv4i2PQYy2aLUe0R////zorx9oAAAAFdFJOU/////8A+7YOUwAAAElJREFUeNqUj1EOwDAIQoHn/c88bX+2fq0kRsAoUXVAfwzCttWsDWzw0kNVWd2tZ5K9gqmMZB8libt4pSg6YlO3RnTzyxePAAMAzqMDgTX8hYYAAAAASUVORK5CYII=
@@ -21,7 +21,7 @@
 this.$ = this.jQuery = jQuery.noConflict(true);
 
 (function ($) {
-	var waitnum = 10;	//404時のページ遷移ウェイト[秒]
+	var waitnum = -1;	//404時のページ遷移ウェイト[秒]:-1で無効
 
 	var title = document.title;								//ページタイトル
 
@@ -48,10 +48,6 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 				url: "http://parupunte.net/logbox/detail.html?no=" + $N,
 			},
 			{
-				site: "ふたろぐばこ",
-				url: "http://imgbako.com/" + $F,
-			},
-			{
 				site: "ぽかん庫",
 				url: "http://u.magipoka.net/res/" + $F,
 			},
@@ -72,6 +68,10 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 				site: "ふたば☆ちん",
 				url: "http://" + $S + ".2chin.net/" + $D + "/res/" + $F,
 			},
+			{
+				site: "futabachan.net",
+				url: "https://www.futabachan.net/" + $S + "/" + $N,
+			},
 		],
 		dat: [
 			{
@@ -82,11 +82,15 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 				site: "iFutaba",
 				url: "http://ifutaba.net/" + $S + "/" + $F,
 			},
+			{
+				site: "futabachan.net",
+				url: "https://www.futabachan.net/" + $S + "/" + $N,
+			},
 		],
 		may: [
 			{
-				site: "ふたろぐばこ",
-				url: "http://futalog.com/" + $F,
+				site: "futabalog",
+				url: "http://futabalog.com/thread/" + $hash,
 			},
 			{
 				site: "iFutaba",
@@ -97,13 +101,14 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 				url: "http://www.ftbucket.info/" + $S + "/cont/" + $S +
 					".2chan.net_" + $D + "_res_" + $N + "/index.htm",
 			},
-			{
-				site: "futabalog",
-				url: "http://futabalog.com/thread/" + $hash,
-			},
+
 			{
 				site: "ふたば☆ちん",
 				url: "http://" + $S + ".2chin.net/" + $D + "/res/" + $F,
+			},
+			{
+				site: "futabachan.net",
+				url: "https://www.futabachan.net/" + $S + "/" + $N,
 			},
 		],
 		jun: [
@@ -121,6 +126,10 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 				url: "http://www.ftbucket.info/" + $S + "/cont/" + $S +
 					".2chan.net_" + $D + "_res_" + $N + "/index.htm",
 			},
+			{
+				site: "futabachan.net",
+				url: "https://www.futabachan.net/" + $S + "/" + $N,
+			},
 		]
 	};
 	//鯖毎の振り分け
@@ -133,9 +142,13 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 	//404時
 	else {
 		var $h1 = $("body > h1");
-		$h1.before("<div><span id='countdown'>" + waitnum +
+		if (waitnum !== -1) {
+			$h1.before("<div><span id='countdown'>" + waitnum +
 			"</span>秒後に外部ログサイト(" + logService_server[0].site +
 			")に移動します</div>");
+			setTimeout(redirect, waitnum * 1000);
+			setInterval(countdown, 1000);
+		}
 		$h1.before("<div>ログサイトリスト :</div>");
 		$h1.before("<ul id='loglist'></ul>");
 		var $li = $("#loglist");
@@ -145,8 +158,6 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 		});
 		satty();
 		msmht();
-		setTimeout(redirect, waitnum * 1000);
-		setInterval(countdown, 1000);
 	}
 
 	function makelogsitebutton() {
