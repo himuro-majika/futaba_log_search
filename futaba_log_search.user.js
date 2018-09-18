@@ -157,7 +157,6 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 				"' target='_blank' rel=noreferrer>" + item.site + "*</a></li>");
 		});
 		satty();
-		msmht();
 	}
 
 	function makelogsitebutton() {
@@ -234,40 +233,6 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 				if (res.success) {
 					$li.append("<li><a href='" + url_prefix + res.path +
 						"' target='_blank'>「」ッチー*</a></li>");
-				}
-			}
-		});
-	}
-	function msmht() {
-		var url_prefix = "http://kokoromati.orz.hm/mm/view";
-		var url_ss;
-		var url_cgi = "catalog";
-		if ($S == "may") {
-			url_ss = "/11/";
-		}
-		else if ($S == "img") {
-			url_ss = "/14/";
-		}
-		else if ($S == "dat") {
-			url_ss = "/15/";
-		}
-		else {
-			return;
-		}
-		var url_req = url_prefix + url_ss + url_cgi	;
-		GM_xmlhttpRequest({
-			method: "POST",
-			url: url_req,
-			data: "filter=%24mht_name%3D%3D%22" + $S + ".b." + $N + ".mht%22",
-			headers: {
-				"Content-Type": "application/x-www-form-urlencoded"
-			},
-			onload: function(response) {
-				var exp = new RegExp(/<td class="td03"><a href="\/mm\/view(\/mht\/\d+)" target="_blank">/);
-				var path = response.responseText.match(exp);
-				if( path ){
-					$li.append("<li><a href='" + url_prefix + path[1] +
-						"' target='_blank'>Ms.MHT*</a></li>");
 				}
 			}
 		});
