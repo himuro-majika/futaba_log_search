@@ -72,6 +72,10 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 				site: "futabachan.net",
 				url: "https://www.futabachan.net/" + $S + "/" + $N,
 			},
+			{
+				site: "futakuro",
+				url: "http://kako.futakuro.com/futa/"+ $S + "_" + $D + "/" + $N + "/",
+			},
 		],
 		dat: [
 			{
@@ -109,6 +113,10 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 			{
 				site: "futabachan.net",
 				url: "https://www.futabachan.net/" + $S + "/" + $N,
+			},
+			{
+				site: "futakuro",
+				url: "http://kako.futakuro.com/futa/"+ $S + "_" + $D + "/" + $N + "/",
 			},
 		],
 		jun: [
