@@ -48,14 +48,6 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 				url: "http://parupunte.net/logbox/detail.html?no=" + $N,
 			},
 			{
-				site: "ぽかん庫",
-				url: "http://u.magipoka.net/res/" + $F,
-			},
-			{
-				site: "iFutaba",
-				url: "http://ifutaba.net/" + $S + "/" + $F,
-			},
-			{
 				site: "FTBucket",
 				url: "http://www.ftbucket.info/" + $S + "/cont/" + $S +
 					".2chan.net_" + $D + "_res_" + $N + "/index.htm",
@@ -69,10 +61,6 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 				url: "http://" + $S + ".2chin.net/" + $D + "/res/" + $F,
 			},
 			{
-				site: "futabachan.net",
-				url: "https://www.futabachan.net/" + $S + "/" + $N,
-			},
-			{
 				site: "futakuro",
 				url: "http://kako.futakuro.com/futa/"+ $S + "_" + $D + "/" + $N + "/",
 			},
@@ -82,23 +70,11 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 				site: "リッチー",
 				url: "http://appsweets.net/tatelog/dat/thread/" + $N,
 			},
-			{
-				site: "iFutaba",
-				url: "http://ifutaba.net/" + $S + "/" + $F,
-			},
-			{
-				site: "futabachan.net",
-				url: "https://www.futabachan.net/" + $S + "/" + $N,
-			},
 		],
 		may: [
 			{
 				site: "futabalog",
 				url: "http://futabalog.com/thread/" + $hash,
-			},
-			{
-				site: "iFutaba",
-				url: "http://ifutaba.net/" + $S + "/" + $F,
 			},
 			{
 				site: "FTBucket",
@@ -111,32 +87,15 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 				url: "http://" + $S + ".2chin.net/" + $D + "/res/" + $F,
 			},
 			{
-				site: "futabachan.net",
-				url: "https://www.futabachan.net/" + $S + "/" + $N,
-			},
-			{
 				site: "futakuro",
 				url: "http://kako.futakuro.com/futa/"+ $S + "_" + $D + "/" + $N + "/",
 			},
 		],
 		jun: [
 			{
-				site: "ふたばログギャラリー",
-				url: "http://kmlg.jp/logview/kmlg.jp/archive/" + $S + "_" + $D + "/" +
-					$F + "/index.htm",
-			},
-			{
-				site: "iFutaba",
-				url: "http://ifutaba.net/" + $S + "/" + $F,
-			},
-			{
 				site: "FTBucket",
 				url: "http://www.ftbucket.info/" + $S + "/cont/" + $S +
 					".2chan.net_" + $D + "_res_" + $N + "/index.htm",
-			},
-			{
-				site: "futabachan.net",
-				url: "https://www.futabachan.net/" + $S + "/" + $N,
 			},
 		]
 	};
