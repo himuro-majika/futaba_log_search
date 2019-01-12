@@ -9,8 +9,8 @@
 // @include        https://dat.2chan.net/b/res/*.htm
 // @include        http://may.2chan.net/b/res/*.htm
 // @include        https://may.2chan.net/b/res/*.htm
-// @include        http://jun.2chan.net/b/res/*.htm
-// @include        https://jun.2chan.net/b/res/*.htm
+// @include        http://jun.2chan.net/jun/res/*.htm
+// @include        https://jun.2chan.net/jun/res/*.htm
 // @require        http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js
 // @require        https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/md5.js
 // @version        1.3.4
