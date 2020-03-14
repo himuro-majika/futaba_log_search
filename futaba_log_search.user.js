@@ -64,6 +64,10 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 				site: "futakuro",
 				url: "http://kako.futakuro.com/futa/"+ $S + "_" + $D + "/" + $N + "/",
 			},
+			{
+				site: "Futafuta",
+				url: "http://futafuta.site/thread/" + $F,
+			},
 		],
 		dat: [
 			{
@@ -90,12 +94,20 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 				site: "futakuro",
 				url: "http://kako.futakuro.com/futa/"+ $S + "_" + $D + "/" + $N + "/",
 			},
+			{
+				site: "Futafuta",
+				url: "http://futafuta.site/thread/" + $F,
+			},
 		],
 		jun: [
 			{
 				site: "FTBucket",
 				url: "http://www.ftbucket.info/" + $S + "/cont/" + $S +
 					".2chan.net_" + $D + "_res_" + $N + "/index.htm",
+			},
+			{
+				site: "Futafuta",
+				url: "http://futafuta.site/thread/" + $F,
 			},
 		]
 	};
