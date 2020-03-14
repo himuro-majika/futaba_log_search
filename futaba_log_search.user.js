@@ -49,16 +49,8 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 			},
 			{
 				site: "FTBucket",
-				url: "http://www.ftbucket.info/" + $S + "/cont/" + $S +
+				url: "http://c3.ftbucket.info/" + $S + "/cont/" + $S +
 					".2chan.net_" + $D + "_res_" + $N + "/index.htm",
-			},
-			{
-				site: "futabalog",
-				url: "http://futabalog.com/thread/" + $hash,
-			},
-			{
-				site: "ふたば☆ちん",
-				url: "http://" + $S + ".2chin.net/" + $D + "/res/" + $F,
 			},
 			{
 				site: "futakuro",
@@ -77,18 +69,9 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 		],
 		may: [
 			{
-				site: "futabalog",
-				url: "http://futabalog.com/thread/" + $hash,
-			},
-			{
 				site: "FTBucket",
-				url: "http://www.ftbucket.info/" + $S + "/cont/" + $S +
+				url: "http://c3.ftbucket.info/" + $S + "/cont/" + $S +
 					".2chan.net_" + $D + "_res_" + $N + "/index.htm",
-			},
-
-			{
-				site: "ふたば☆ちん",
-				url: "http://" + $S + ".2chin.net/" + $D + "/res/" + $F,
 			},
 			{
 				site: "futakuro",
@@ -102,7 +85,7 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 		jun: [
 			{
 				site: "FTBucket",
-				url: "http://www.ftbucket.info/" + $S + "/cont/" + $S +
+				url: "http://c3.ftbucket.info/" + $S + "/cont/" + $S +
 					".2chan.net_" + $D + "_res_" + $N + "/index.htm",
 			},
 			{
