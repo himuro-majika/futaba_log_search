@@ -58,7 +58,7 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 			},
 			{
 				site: "Futafuta",
-				url: "http://futafuta.site/thread/" + $F,
+				url: "http://futafuta.site/thread/" + $S + "/" + $F,
 			},
 		],
 		dat: [
@@ -70,7 +70,7 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 		may: [
 			{
 				site: "FTBucket",
-				url: "http://c3.ftbucket.info/" + $S + "/cont/" + $S +
+				url: "http://" + $S + ".ftbucket.info/" + $S + "/cont/" + $S +
 					".2chan.net_" + $D + "_res_" + $N + "/index.htm",
 			},
 			{
@@ -79,7 +79,7 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 			},
 			{
 				site: "Futafuta",
-				url: "http://futafuta.site/thread/" + $F,
+				url: "http://futafuta.site/thread/" + $S + "/" + $F,
 			},
 		],
 		jun: [
@@ -90,7 +90,7 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 			},
 			{
 				site: "Futafuta",
-				url: "http://futafuta.site/thread/" + $F,
+				url: "http://futafuta.site/thread/" + $S + "/" + $F,
 			},
 		]
 	};
