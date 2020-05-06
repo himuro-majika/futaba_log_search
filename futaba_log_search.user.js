@@ -13,7 +13,7 @@
 // @include        https://jun.2chan.net/jun/res/*.htm
 // @require        http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js
 // @require        https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/md5.js
-// @version        1.3.7
+// @version        1.3.8
 // @grant          GM_xmlhttpRequest
 // @license        MIT
 // @icon         data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAPUExURYv4i2PQYy2aLUe0R////zorx9oAAAAFdFJOU/////8A+7YOUwAAAElJREFUeNqUj1EOwDAIQoHn/c88bX+2fq0kRsAoUXVAfwzCttWsDWzw0kNVWd2tZ5K9gqmMZB8libt4pSg6YlO3RnTzyxePAAMAzqMDgTX8hYYAAAAASUVORK5CYII=
@@ -58,7 +58,7 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 			},
 			{
 				site: "Futafuta",
-				url: "http://futafuta.site/thread/" + $F,
+				url: "http://futafuta.site/thread/" + $S + "/" + $F,
 			},
 		],
 		dat: [
@@ -70,7 +70,7 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 		may: [
 			{
 				site: "FTBucket",
-				url: "http://c3.ftbucket.info/" + $S + "/cont/" + $S +
+				url: "http://" + $S + ".ftbucket.info/" + $S + "/cont/" + $S +
 					".2chan.net_" + $D + "_res_" + $N + "/index.htm",
 			},
 			{
@@ -79,7 +79,7 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 			},
 			{
 				site: "Futafuta",
-				url: "http://futafuta.site/thread/" + $F,
+				url: "http://futafuta.site/thread/" + $S + "/" + $F,
 			},
 		],
 		jun: [
@@ -90,7 +90,7 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 			},
 			{
 				site: "Futafuta",
-				url: "http://futafuta.site/thread/" + $F,
+				url: "http://futafuta.site/thread/" + $S + "/" + $F,
 			},
 		]
 	};
