@@ -81,6 +81,10 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 				site: "Futafuta",
 				url: "http://futafuta.site/thread/" + $S + "/" + $F,
 			},
+			{
+				site: "ふたばフォレスト",
+				url: "http://futabaforest.net/b/res/" + $F,
+			},
 		],
 		jun: [
 			{
