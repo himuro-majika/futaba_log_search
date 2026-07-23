@@ -196,8 +196,8 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 			url: url_req,
 			onload: function(response) {
 				var res = JSON.parse(response.responseText);
-				if (res.success) {
-					$li.append("<li><a href='" + url_prefix + res.path +
+				if (res.success && res.logs.length > 0) {
+					$li.append("<li><a href='" + url_prefix + url_ss + res.logs[0].path +
 						"' target='_blank'>「」ッチー*</a></li>");
 				}
 			}
